@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>T-Shirt Size Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: lightblue;
+            
+        }
+
+        h1 {
+            margin-top: 30px;
+            color: rgb(149, 45, 45);
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin-top: 5rem;
+            margin-bottom: 4rem;
+        }
+
+        form {
+            margin-top: 50px;
+
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height:34rem;
+            width: 60rem;
+            margin-left: 27rem;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            padding: 5px;
+            /* width: px;  200px*/
+            width: 20%;
+            height: 30px;
+            font-size: 16px;
+            border: 2px solid #b45d5d;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: bold;
+            height: 3rem;
+            width: 8rem;
+        }
+
+        h2 {
+            margin-top: 43px;
+            height: 3rem;
+            width: 30rem;
+            padding-top:1.5rem;
+            color: white;
+            margin-left: 15rem;
+            background-color:#4CAF50;
+        }
+        span{
+         color:crimson
+        }
+
+    </style>
+</head>
+<body>
+    <h1><span>T</span>-Shirt <span>S</span>ize <span>P</span>redictor</h1>
+    <form action="/predict" method="post">
+        <label for="height">Height (in cm):</label>
+        <input type="number" id="height" name="height" required><br><br>
+        <label for="weight">Weight (in kg):</label>
+        <input type="number" id="weight" name="weight" required><br><br>
+        <label for="clusters">Number of Neighbors:</label>
+        <input type="number" id="clusters" name="clusters" min="1" required><br><br>
+        <input type="submit" value="Predict">
+        {% if prediction %}
+        <h2>Predicted T-Shirt Size: <span>{{ prediction }}</span></h2>
+      {% endif %}
+      {% if message %}
+      <h2>{{message}}</h2>
+    {% endif %}
+    </form>
+    
+</body>
+</html>

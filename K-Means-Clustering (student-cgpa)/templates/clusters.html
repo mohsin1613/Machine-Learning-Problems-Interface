@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>K-Means Clusters</title>
+</head>
+<body>
+    <h1>K-Means Clusters</h1>
+    {% if input_given %}
+    <p>Input Number of Clusters: {{ num_clusters }}</p>
+    <p>Input Initial Centers: {{ centers }}</p>
+    <h2>Final Clusters:</h2>
+    <ul>
+        {% for cluster_index,cluster_points in clusters.items() %}
+        <li>Cluster: {{ cluster_index+1}}
+            <ul>
+                {% for point in cluster_points %}
+                <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <a href="/">Go back</a>
+</body>
+</html>

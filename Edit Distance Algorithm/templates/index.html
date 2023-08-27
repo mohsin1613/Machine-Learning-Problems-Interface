@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Distance Calculator</title>
+  <style>
+     body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: lightblue;
+            
+        }
+  h1{
+    margin-top: 7rem;
+    color:green;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  span{
+    color: #9c3636;
+
+  }
+
+        form {
+            margin-top: 50px;
+
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height:34rem;
+            width: 60rem;
+            margin-left: 27rem;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 30%;
+            height: 30px;
+            font-size: 18px;
+            border: 2px solid #9c3636;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 40px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: bold;
+            height: 3.5rem;
+            width: 10rem;
+        }
+p{
+    color: white;
+    background-color: cadetblue;
+    height: 3rem;
+    width: 40%;
+    margin-top: 4rem;
+    margin-left: 18rem;
+    padding-top: 22px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px;
+
+}
+
+  </style>
+
+</head>
+<body>
+    <h1><span>E</span>dit <span>D</span>istance <span>C</span>alculator</h1>
+    <form action="/predict" method="post">
+        <label for="target_string">Enter target string:</label>
+        <input type="text" id="target_string" name="target_string" required><br>
+        <label for="input_string">Enter input string:</label>
+        <input type="text" id="input_string" name="input_string" required><br>
+        <button type="submit">Calculate</button>
+        {% if distance %}
+        <p>Edit Distance: <span>{{distance}}</span></p>
+        {% endif %}
+    </form>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fruit Recognition</title>
+    <style>
+        body {
+            background-color: lightblue;
+            /* Set the background color */
+            font-family: Arial, sans-serif;
+            /* Change the font family */
+            text-align: center;
+        }
+         h1{
+            color: rgb(149, 45, 45);
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin-top: 5rem;
+            margin-bottom: 4rem;
+         }
+         span{
+            color: green;
+         }
+        .center {
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; */
+            text-align: center;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height:32rem;
+            width: 60rem;
+            margin-left: 27rem;
+        }
+
+        button {
+            background-color: #4CAF50;
+            /* Change button color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            height: 3rem;
+            width: 8rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            font-size: 20px;
+            font-weight: bold;
+            
+            /* Change font size for labels */
+        }
+
+        input {
+            font-size: 16px;
+            /* Change font size for input fields */
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #9d3131;
+            border-radius: 8px;
+            text-align: center;
+            width: 70%;
+        }
+
+        p {
+            font-size: 24px;
+            color: white;
+            width:45rem;
+            height: 50px;
+            font-weight: bold;
+            padding-top: 23px;
+            background-color:steelblue;
+            text-align: center;
+            margin-left: 7rem;
+        }
+        .type{
+            color: rgb(32, 224, 32);
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1><span>F</span>ruit <span>R</span>ecognition</h1>
+    <form method="post">
+        <label for="shape">Shape (-1 for elliptical, 1 for round):</label>
+        <input type="number" id="shape" name="shape" required><br>
+        <label for="texture">Texture (-1 for rough, 1 for smooth):</label>
+        <input type="number" id="texture" name="texture" required><br>
+        <label for="weight">Weight (-1 for less than 1 pound, 1 for more than 1 pound):</label>
+        <input type="number" id="weight" name="weight" required><br>
+        <button type="submit">Predict</button>
+        {% if fruit_type %}
+        <p>Predicted Fruit Class: <span class="type">{{ fruit_type }}</span></p>
+        {% endif %}
+    </form>
+
+</body>
+
+</html>
